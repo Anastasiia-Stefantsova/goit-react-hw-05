@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.img {
+    width: 200px;
+    height: 300px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-decoration: inherit;
+}
+
+.h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.btn {
+    padding-top: 10px;
+    border: none;
+}
