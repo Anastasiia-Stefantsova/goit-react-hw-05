@@ -12,28 +12,6 @@ export default function MoviesPage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [trendingMovies, setTrendingMovies] = useState([]);
-
-    useEffect(() => {
-        const fetchTrendingMovies = async () => {
-            setLoading(true);
-            try {
-                const response = await axios.get('https://api.themoviedb.org/3/movie/popular', {
-                    headers: {
-                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZThlZWM4NTYzYjBkYTJiY2QwNmI2MDljODEyNWFjMiIsIm5iZiI6MTcyMTY4MjE1NC45MjUwMzYsInN1YiI6IjY2OWVjMjBkZjMxM2ZmMjJiMzdkMjhhMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1iJ3HaT2kDskjphneTLCMSKv4-F0oDQ3Tau7vERNMKA'
-                    }
-                });
-                setTrendingMovies(response.data.results);
-                setLoading(false);
-            } catch (error) {
-                setError('Failed to fetch trending movies');
-                toast.error('Failed to fetch trending movies');
-                setLoading(false);
-            }
-        };
-
-        fetchTrendingMovies();
-    }, []);
 
     useEffect(() => {
         const queryParam = searchParams.get('query');
